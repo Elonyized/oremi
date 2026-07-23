@@ -1262,6 +1262,112 @@ main {
     to { opacity: 1; transform: translateY(0); }
 }
 
+
+
+/* ============================================================
+   GALLERY (Detail Pages)
+   ============================================================ */
+.gallery-main {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+}
+
+.gallery-thumb {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.gallery-thumb:hover,
+.gallery-thumb.active {
+    border-color: var(--accent-gold);
+    opacity: 1;
+}
+
+/* ============================================================
+   FILTER BUTTONS
+   ============================================================ */
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: #0D0D0D;
+}
+
+/* ============================================================
+   DETAIL PAGE
+   ============================================================ */
+.detail-meta-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.detail-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.875rem;
+}
+
+.detail-meta-item:last-child {
+    border-bottom: none;
+}
+
+.detail-meta-item i {
+    color: var(--accent-gold);
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.detail-meta-label {
+    color: var(--text-muted);
+    font-size: 0.775rem;
+    display: block;
+}
+
+.detail-meta-value {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+
+
+
 /* ============================================================
    23. MEDIA QUERIES
    ============================================================ */
@@ -1349,4 +1455,62 @@ main {
         text-align: center;
         justify-content: center;
     }
+}
+
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.contact-info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-info-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--accent-gold-dim);
+    border: 1px solid var(--border-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.contact-info-text h6 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.contact-info-text p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.whatsapp-cta {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.whatsapp-cta p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
 }

@@ -56,6 +56,10 @@ $routes = [
     // Contact
     'contact'           => '../app/views/contact/index.php',
 
+  // Like & Comment
+    'like'              => '../app/processes/like.php',
+    'comment'           => '../app/processes/comment.php',
+
     // Admin routes
     'admin'             => '../app/views/admin/login.php',
     'admin-login'       => '../app/views/admin/login.php',
@@ -106,6 +110,36 @@ if ($page === 'admin-logout') {
     session_destroy();
     header('Location: ' . SITE_URL . '/?page=admin-login');
     exit();
+}
+
+// Run admin process files before loading views
+$adminProcesses = [
+    'like'                        => '../app/processes/like.php',
+    'comment'                     => '../app/processes/comment.php',
+    'contact'                     => '../app/processes/contact.php',
+    'admin-projects-add'          => '../app/processes/admin/project.php',
+    'admin-projects-edit'         => '../app/processes/admin/project.php',
+    'admin-projects-delete'       => '../app/processes/admin/project.php',
+    'admin-properties-add'        => '../app/processes/admin/property.php',
+    'admin-properties-edit'       => '../app/processes/admin/property.php',
+    'admin-properties-delete'     => '../app/processes/admin/property.php',
+    'admin-constructions-add'     => '../app/processes/admin/construction.php',
+    'admin-constructions-edit'    => '../app/processes/admin/construction.php',
+    'admin-constructions-delete'  => '../app/processes/admin/construction.php',
+    'admin-designs-add'           => '../app/processes/admin/design.php',
+    'admin-designs-edit'          => '../app/processes/admin/design.php',
+    'admin-designs-delete'        => '../app/processes/admin/design.php',
+    'admin-interiors-add'         => '../app/processes/admin/interior.php',
+    'admin-interiors-edit'        => '../app/processes/admin/interior.php',
+    'admin-interiors-delete'      => '../app/processes/admin/interior.php',
+    'admin-comments-approve'      => '../app/processes/admin/comment.php',
+    'admin-comments-delete'       => '../app/processes/admin/comment.php',
+    'admin-messages'              => '../app/processes/admin/message.php',
+    'admin-messages-view'         => '../app/processes/admin/message.php',
+];
+
+if (array_key_exists($page, $adminProcesses)) {
+    require_once $adminProcesses[$page];
 }
 
 // Load the page

@@ -9,7 +9,7 @@ Class Project {
 
     // Get all projects
     public function getAll($limit = null, $offset = 0) {
-        $sql = "SELECT p.*, c.name AS category_name 
+        $sql = "SELECT p.*, c.name AS category_name, c.slug AS category_slug 
                 FROM projects p 
                 JOIN categories c ON p.category_id = c.id 
                 ORDER BY p.created_at DESC";

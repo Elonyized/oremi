@@ -135,6 +135,7 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <!-- Custom JS -->
+<script>window.SITE_URL = '<?= SITE_URL ?>';</script>
 <script src="<?= SITE_URL ?>/assets/js/main.js"></script>
 
 <script>
